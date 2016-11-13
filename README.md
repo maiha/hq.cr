@@ -1,4 +1,4 @@
-# hq.cr
+# hq.cr [![Build Status](https://travis-ci.org/maiha/hq.cr.svg?branch=master)](https://travis-ci.org/maiha/hq.cr)
 
 a simple wrapper for crystal-xml
 - gateway pattern : suppress errors until values are referenced
