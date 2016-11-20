@@ -11,8 +11,8 @@ class Hq::Css
   end
 
   module Finder
-    def css(selector) : Node
-      Nodes.new(raw.nodes(selector), selector)
+    def css(selector) : Nodes
+      EachTag.new(raw.nodes(selector), selector)
     rescue err : Myhtml::Error
       case err.to_s
       when /unknown tag/i
@@ -27,7 +27,7 @@ class Hq::Css
     include Enumerable(Node)
     include Finder
 
-    abstract def raw : Raw
+#    abstract def raw : Raw
     abstract def text : String
 #    abstract def attributes : Hash(String, String)
 
@@ -37,10 +37,6 @@ class Hq::Css
 
     protected def build(node)
       Hq::Css.parse(node)
-    end
-
-    protected def none
-      Hq::Css::None.new
     end
 
     protected def text_summary(max)

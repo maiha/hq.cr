@@ -1,11 +1,8 @@
 struct Hq::Css::None
+  include Hq::Css::Nodes
   include Hq::Css::Node
 
   def initialize
-  end
-
-  def raw
-    raise "None"
   end
 
   def text
@@ -23,7 +20,11 @@ struct Hq::Css::None
     self
   end
 
-  def size
-    0
+  def [](index : String)
+    "(none)"
+  end
+
+  def []?(index : String)
+    nil
   end
 end

@@ -1,21 +1,5 @@
-class Hq::Css::Nodes
-  include  Hq::Css::Node
-
-  getter raw
-  getter tag
-  
-  def initialize(@raw : Myhtml::EachTagIterator, @tag : String)
-  end
-
-  def name
-    tag
-  end
-
-  def each
-    raw.each do |node|
-      yield(Hq::Css::Text.new(node))
-    end
-  end
+module Hq::Css::Nodes
+  include Enumerable(Node)
 
   def text
     map(&.text).join("\n")
@@ -26,7 +10,26 @@ class Hq::Css::Nodes
     each_with_index do |node, i|
       return node if i == index
     end
-    return none
+    return Hq::Css::None.new
+  end
+end
+
+class Hq::Css::EachTag
+  include Hq::Css::Nodes
+
+  getter tag
+  
+  def initialize(@raw : Myhtml::EachTagIterator, @tag : String)
+  end
+
+  def name
+    tag
+  end
+
+  def each
+    @raw.each do |node|
+      yield(Hq::Css::Text.new(node))
+    end
   end
 
   def inspect(io : IO)

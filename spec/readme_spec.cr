@@ -16,11 +16,12 @@ describe "README.md" do
   end
 
   describe "css" do
+    nodes = Hq::Css.parse <<-EOF
+      <a href="https://github.com/crystal-lang/crystal" class="official">crystal</a>
+      <a href="https://github.com/maiha/hq.cr">hq.cr</a>
+      EOF
+
     it "should work" do
-      nodes = Hq::Css.parse <<-EOF
-        <a href="https://github.com/crystal-lang/crystal" class="official">crystal</a>
-        <a href="https://github.com/maiha/hq.cr">hq.cr</a>
-        EOF
       nodes.css("a").each_with_index do |a, i|
         vals = [a["href"], a["class"]?]
         case i
@@ -28,6 +29,12 @@ describe "README.md" do
         when 1; vals.should eq(["https://github.com/maiha/hq.cr", nil])
         end
       end
+    end
+
+    it "should also work for map" do
+      vals = nodes.css("a").map{|a| [a["href"], a["class"]?]}
+      vals.should eq([["https://github.com/crystal-lang/crystal", "official"],
+                      ["https://github.com/maiha/hq.cr", nil]])
     end
   end
 end
