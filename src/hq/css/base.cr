@@ -7,7 +7,7 @@ class Hq::Css
   end
 
   def self.parse(n : Myhtml::Node)
-    Text.new(n)
+    Element.new(n)
   end
 
   module Finder

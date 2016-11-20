@@ -28,7 +28,7 @@ class Hq::Css::EachTag
 
   def each
     @raw.each do |node|
-      yield(Hq::Css::Text.new(node))
+      yield(Hq::Css::Element.new(node))
     end
   end
 

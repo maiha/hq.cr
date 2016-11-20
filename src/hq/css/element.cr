@@ -1,4 +1,4 @@
-class Hq::Css::Text
+class Hq::Css::Element
   include Hq::Css::Node
 
   getter raw
