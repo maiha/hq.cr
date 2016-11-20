@@ -27,7 +27,9 @@ node.xpath("/html/body").path     # => "/html/body"
 node.xpath("/html/div").text      # raise Hq::NotFound.new(key: "/html/div")
 ```
 
-## css (WIP)
+## css
+
+- css selector
 
 ```crystal
 nodes = Hq::Css.parse <<-EOF
@@ -36,8 +38,22 @@ nodes = Hq::Css.parse <<-EOF
     <li>bar</li>
   </ul>
   EOF
-
 nodes.css("li").map(&.text)  # => ["foo", "bar"]
+```
+
+- node attributes
+
+```crystal
+nodes = Hq::Css.parse <<-EOF
+  <a href="https://github.com/crystal-lang/crystal" class="official">crystal</a>
+  <a href="https://github.com/maiha/hq.cr">hq.cr</a>
+  EOF
+nodes.css("a").each do |a|
+  p [a["href"], a["class"]?]
+end
+
+# => ["https://github.com/crystal-lang/crystal", "official"]
+# => ["https://github.com/maiha/hq.cr", nil]
 ```
 
 ## Roadmap
@@ -49,7 +65,7 @@ nodes.css("li").map(&.text)  # => ["foo", "bar"]
 #### 0.3.0
 
 - [ ] support `css(tag_with_class)` 
-- [ ] support `Css::Node#attributes`
+- [x] support `Css::Node#attributes`
 
 #### 0.4.0
 

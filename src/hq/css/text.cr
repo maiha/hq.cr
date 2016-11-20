@@ -2,6 +2,8 @@ class Hq::Css::Text
   include Hq::Css::Node
 
   getter raw
+  delegate attributes, to: raw
+  delegate "[]", "[]?", to: attributes
   
   def initialize(@raw : Myhtml::Node)
   end
@@ -12,7 +14,7 @@ class Hq::Css::Text
 
   def text : String
     if size == 0
-      @raw.tag_text
+      raw.tag_text
     else
       map(&.text.as(String)).join("\n")
     end

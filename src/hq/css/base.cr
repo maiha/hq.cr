@@ -39,6 +39,10 @@ class Hq::Css
       Hq::Css.parse(node)
     end
 
+    protected def none
+      Hq::Css::None.new
+    end
+
     protected def text_summary(max)
       buf = text
       buf = buf.split(//)[0,max].join + "..." if buf.size > max

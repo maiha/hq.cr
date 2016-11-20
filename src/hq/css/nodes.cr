@@ -13,12 +13,20 @@ class Hq::Css::Nodes
 
   def each
     raw.each do |node|
-      yield(build(node))
+      yield(Hq::Css::Text.new(node))
     end
   end
 
   def text
     map(&.text).join("\n")
+  end
+
+  def [](index : Int32)
+    # FIXME: replace this with something like `Enumerable#at(n)`
+    each_with_index do |node, i|
+      return node if i == index
+    end
+    return none
   end
 
   def inspect(io : IO)

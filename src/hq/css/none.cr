@@ -1,4 +1,4 @@
-class Hq::Css::None
+struct Hq::Css::None
   include Hq::Css::Node
 
   def initialize
@@ -17,6 +17,10 @@ class Hq::Css::None
   end
 
   def each(&block)
+  end
+
+  def [](index : Int32)
+    self
   end
 
   def size
