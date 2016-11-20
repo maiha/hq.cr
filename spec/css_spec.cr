@@ -28,5 +28,16 @@ describe Hq::Css do
     it "should return empty nodes when not found" do
       nodes.css("xxx").size.should eq(0)
     end
+
+    it "should parse partial html" do
+      nodes = Hq::Css.parse <<-EOF
+        <ul>
+          <li>foo</li>
+          <li>bar</li>
+        </ul>
+        EOF
+
+      nodes.css("li").map(&.text).should eq(["foo", "bar"])
+    end
   end
 end

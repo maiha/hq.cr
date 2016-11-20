@@ -27,19 +27,33 @@ node.xpath("/html/body").path     # => "/html/body"
 node.xpath("/html/div").text      # raise Hq::NotFound.new(key: "/html/div")
 ```
 
+### css (WIP)
+
+```crystal
+nodes = Hq::Css.parse <<-EOF
+  <ul>
+    <li>foo</li>
+    <li>bar</li>
+  </ul>
+  EOF
+
+nodes.css("li").map(&.text)  # => ["foo", "bar"]
+```
+
 ## Roadmap
 
 #### 0.2.0
 
-[ ] support `NodeSet`
+- [x] support `css(tag)`
 
 #### 0.3.0
 
-[ ] support `Hq.mapping` like `jq.cr`
+- [ ] support `css(tag_with_class)` 
+- [ ] support `Css::Node#attributes`
 
-#### 1.0.0
+#### 0.4.0
 
-[ ] support `Hq#css(path)` like `Nokogiri`
+- [ ] support `Hq.mapping` like `jq.cr`
 
 ## Contributing
 

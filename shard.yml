@@ -1,13 +1,16 @@
 name: hq
-version: 0.1.0
+version: 0.2.0
 
 dependencies:
   try:
     github: maiha/try.cr
     version: 0.1.0
   myhtml:
-    github: kostya/myhtml
-    version: 0.9
+#    github: kostya/myhtml
+#    version: 0.9
+# until PR is merged
+    github: maiha/myhtml
+    branch: tag-str
     
 authors:
   - maiha <maiha@wota.jp>
