@@ -11,7 +11,7 @@ class Hq::Css
   end
 
   module Finder
-    def css(selector)
+    def css(selector) : Node
       Nodes.new(raw.nodes(selector), selector)
     rescue err : Myhtml::Error
       case err.to_s
@@ -32,7 +32,7 @@ class Hq::Css
 #    abstract def attributes : Hash(String, String)
 
     def inspect(io : IO)
-      io << "Node(tag=#{name}, text=#{text_summary(20)}"
+      io << "Node(tag='#{name}', text='#{text_summary(20)}')"
     end
 
     protected def build(node)

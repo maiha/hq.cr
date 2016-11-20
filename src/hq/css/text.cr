@@ -11,7 +11,7 @@ class Hq::Css::Text
   end
 
   def text : String
-    if @raw.children.size == 0
+    if size == 0
       @raw.tag_text
     else
       map(&.text.as(String)).join("\n")

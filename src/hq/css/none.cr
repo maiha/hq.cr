@@ -9,11 +9,11 @@ class Hq::Css::None
   end
 
   def text
-    raise "None"
+    "(none)"
   end
 
   def name
-    raise "None"
+    "(none)"
   end
 
   def each(&block)
