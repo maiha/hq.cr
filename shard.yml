@@ -5,7 +5,10 @@ dependencies:
   try:
     github: maiha/try.cr
     version: 0.1.0
-
+  myhtml:
+    github: kostya/myhtml
+    version: 0.9
+    
 authors:
   - maiha <maiha@wota.jp>
 
