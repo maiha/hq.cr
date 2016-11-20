@@ -1,6 +1,6 @@
 # hq.cr [![Build Status](https://travis-ci.org/maiha/hq.cr.svg?branch=master)](https://travis-ci.org/maiha/hq.cr)
 
-a simple wrapper for crystal-xml
+a simple wrapper for crystal-xml and myhtml
 - gateway pattern : suppress errors until values are referenced
 - handy accessors : provide useful extractors and conversions
 
@@ -14,7 +14,7 @@ dependencies:
     github: maiha/hq.cr
 ```
 
-## Usage
+## xpath
 
 ```crystal
 require "hq"
@@ -27,7 +27,7 @@ node.xpath("/html/body").path     # => "/html/body"
 node.xpath("/html/div").text      # raise Hq::NotFound.new(key: "/html/div")
 ```
 
-### css (WIP)
+## css (WIP)
 
 ```crystal
 nodes = Hq::Css.parse <<-EOF
