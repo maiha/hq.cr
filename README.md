@@ -6,6 +6,8 @@ a simple wrapper for crystal-xml and myhtml
 
 ## Installation
 
+- crystal: 0.20.0
+
 Add this to your application's `shard.yml`:
 
 ```yaml

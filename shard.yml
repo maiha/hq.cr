@@ -8,9 +8,8 @@ dependencies:
   myhtml:
 #    github: kostya/myhtml
 #    version: 0.9
-# until PR is merged
     github: maiha/myhtml
-    branch: tag-str
+    version: 0.9.1 # until next version is released
     
 authors:
   - maiha <maiha@wota.jp>
