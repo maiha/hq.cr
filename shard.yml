@@ -6,10 +6,8 @@ dependencies:
     github: maiha/try.cr
     version: 0.1.0
   myhtml:
-#    github: kostya/myhtml
-#    version: 0.9
-    github: maiha/myhtml
-    version: 0.9.1 # until next version is released
+    github: kostya/myhtml
+    version: 0.10
     
 authors:
   - maiha <maiha@wota.jp>
