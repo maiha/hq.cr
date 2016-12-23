@@ -6,7 +6,7 @@ a simple wrapper for crystal-xml and myhtml
 
 ## Installation
 
-- crystal: 0.20.0
+- crystal: 0.20.1
 
 Add this to your application's `shard.yml`:
 
@@ -14,6 +14,7 @@ Add this to your application's `shard.yml`:
 dependencies:
   hq:
     github: maiha/hq.cr
+    version: 0.2.1
 ```
 
 ## xpath
