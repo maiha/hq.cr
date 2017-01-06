@@ -1,13 +1,13 @@
 name: hq
-version: 0.2.1
+version: 0.2.2
 
 dependencies:
   try:
     github: maiha/try.cr
-    version: 0.2.0
+    version: 0.2.1
   myhtml:
     github: kostya/myhtml
-    version: 0.12
+    version: 0.14
     
 authors:
   - maiha <maiha@wota.jp>
