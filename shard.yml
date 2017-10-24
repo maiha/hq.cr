@@ -1,10 +1,10 @@
 name: hq
-version: 0.2.1
+version: 0.2.3
 
 dependencies:
   try:
     github: maiha/try.cr
-    version: 0.2.0
+    version: ">= 0.3.0"
   myhtml:
     github: kostya/myhtml
     version: 0.12
