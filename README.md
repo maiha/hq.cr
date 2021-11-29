@@ -1,3 +1,5 @@
+## WARNING: This library is no longer maintained because something wonderful has come along. Try to enjoy:  [Lexbor](https://github.com/kostya/lexbor).
+
 # hq.cr [![Build Status](https://travis-ci.org/maiha/hq.cr.svg?branch=master)](https://travis-ci.org/maiha/hq.cr)
 
 a simple wrapper for crystal-xml and myhtml
